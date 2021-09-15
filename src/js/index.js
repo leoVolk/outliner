@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('.currentyear').html(new Date().getFullYear())
 
 
-    $('#file').change(function () {
+    $('#file').change(() => {
         const currentFile = $('#file').prop('files')[0];
         const reader = new FileReader();
 
@@ -22,7 +22,7 @@ $(document).ready(function () {
             const svgImage = document.createElement("img");
 
             //svgImage.setAttribute('width', '512');
-            svgImage.setAttribute('height', '512');
+            //svgImage.setAttribute('height', '512');
 
             svgImage.setAttribute('src', currentImage);
             svgImage.classList.add('contain-image')
@@ -37,22 +37,24 @@ $(document).ready(function () {
         reader.readAsDataURL(currentFile);
     })
 
-    $('#fill').change(function () {
+    $('#fill').change(() => {
         fillColour = $('#fill').val();
     })
 
-    $('#stroke').change(function () {
+    $('#stroke').change(() => {
         strokeColour = $('#stroke').val();
     })
 
-    $('.clear').click(function () {
-        $('.preview_old').empty();
-        $('.preview_new').empty();
+    $('.clear').click(() => {
+        clearImages();
     })
 
-    $('.download').click(function () {
+    $('.download').click(() => {
         if (!currentImage) return;
-        var svgData = document.querySelector('.preview_new').firstElementChild.outerHTML;
+        const svg = document.querySelector('.preview_new').firstElementChild;
+        svg.classList.remove('contain-image');
+
+        var svgData = svg.outerHTML;
         var svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
         var svgUrl = URL.createObjectURL(svgBlob);
         var downloadLink = document.createElement("a");
@@ -60,9 +62,10 @@ $(document).ready(function () {
         downloadLink.href = svgUrl;
         downloadLink.download = $('#file').prop('files')[0].name.replace('.svg', '_outlined.svg');
         downloadLink.click();
+        clearImages();
     })
 
-    $('.convert').click(function () {
+    $('.convert').click(() => {
         if (!currentImage) return;
 
         $('.preview_new').empty();
@@ -78,13 +81,17 @@ $(document).ready(function () {
 
         element.innerHTML = svgStyle;
 
-        newSVG.setAttribute('height', '512');
+        newSVG.classList.add('contain-image')
         newSVG.insertBefore(element, newSVG.firstChild);
-
-
 
         $('.preview_new').append(newSVG);
 
     });
+
+
+    const clearImages = () => {
+        $('.preview_old').empty();
+        $('.preview_new').empty();
+    }
 
 });

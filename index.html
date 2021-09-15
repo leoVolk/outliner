@@ -41,60 +41,72 @@
         <div class="rounded shadow border">
           <div class="row">
             <div class="col-12 col-lg-6 border-end" style="min-height: 512px">
-              <div class="preview_old contain" style="max-height: 512px"></div>
+              <div
+                class="preview_old contain-image"
+                style="max-height: 512px"
+              ></div>
             </div>
             <div class="col-12 col-lg-6" style="min-height: 512px">
-              <div class="preview_new contain" style="max-height: 512px"></div>
+              <div
+                class="preview_new contain-image"
+                style="max-height: 512px"
+              ></div>
             </div>
             <h4 class="col-6 mb-0 py-2 text-center border-end">Preview</h4>
             <h4 class="col-6 mb-0 py-2 text-center">Result</h4>
           </div>
         </div>
         <div class="row mt-4">
-          <div class="col-lg-auto col-12">
-            <input
-              accept="image/svg+xml"
-              class="input btn btn-outline-secondary h-100"
-              type="file"
-              id="file"
-              name="file"
-            />
-          </div>
-          <div class="col-lg-auto col-12">
-            <button class="btn btn-outline-secondary h-100 convert">
-              Convert
-            </button>
-          </div>
-          <div class="col-lg-auto col-12">
-            <button class="btn btn-outline-danger h-100 clear">Clear</button>
-          </div>
-          <div class="col-lg-auto col-12">
-            <button class="btn btn-outline-primary h-100 download">
-              Download Result
-            </button>
+          <div class="col-auto">
+            <div class="row">
+              <div class="col-lg-auto col-12">
+                <input
+                  accept="image/svg+xml"
+                  class="input btn btn-outline-secondary h-100"
+                  type="file"
+                  id="file"
+                  name="file"
+                />
+              </div>
+              <div class="col-lg-auto col-12">
+                <button class="btn btn-outline-secondary h-100 convert">
+                  Convert
+                </button>
+              </div>
+              <div class="col-lg-auto col-12">
+                <button class="btn btn-outline-danger h-100 clear">
+                  Clear
+                </button>
+              </div>
+              <div class="col-lg-auto col-12">
+                <button class="btn btn-outline-primary h-100 download">
+                  Download Result
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row mt-4">
           <div class="col">
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
+                <h2 class="accordion-header" id="headingOne">
                   <button
-                    class="accordion-button collapsed"
+                    class="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseOne"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
                   >
-                    Advanced Options
+                    Options
                   </button>
                 </h2>
                 <div
-                  id="flush-collapseOne"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingOne"
-                  data-bs-parent="#accordionFlushExample"
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
                     <div class="mt-4 d-flex align-center">
