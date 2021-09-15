@@ -2,3 +2,21 @@
   width: 100%;
   object-fit: contain;
 }
+
+main {
+  min-height: 90vh;
+}
+
+footer {
+  bottom: 0px;
+  position: relative;
+  width: 100%;
+}
+
+nav {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(230, 230, 230, 1) 100%
+  ) !important;
+}

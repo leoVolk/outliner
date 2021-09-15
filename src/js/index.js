@@ -6,6 +6,8 @@ $(document).ready(function () {
     let fillColour = '#fff';
     let strokeColour = '#525252';
 
+    $('.currentyear').html(new Date().getFullYear())
+
 
     $('#file').change(function () {
         const currentFile = $('#file').prop('files')[0];
