@@ -21,8 +21,8 @@
 
   <body>
     <header>
-      <nav class="navbar shadow-lg navbar-light bg-light">
-        <div class="container-fluid">
+      <nav class="navbar shadow navbar-light bg-light">
+        <div class="container">
           <a class="navbar-brand" href="#">
             <img
               src="./public/img/logo.png"
@@ -39,15 +39,15 @@
 
     <main>
       <div class="container my-4">
-        <div class="row">
-          <div class="col-6" style="min-height: 512px">
+        <div class="row rounded shadow border">
+          <div class="col-6 border-end" style="min-height: 512px">
             <div class="preview_old contain" style="max-height: 512px"></div>
           </div>
           <div class="col-6" style="min-height: 512px">
             <div class="preview_new contain" style="max-height: 512px"></div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
           <div class="col-auto">
             <input
               accept="image/svg+xml"
@@ -61,6 +61,14 @@
           <div class="col-auto">
             <button class="btn btn-outline-secondary h-100 convert">
               Convert
+            </button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-danger h-100 clear">Clear</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-primary h-100 download">
+              Download Result
             </button>
           </div>
         </div>

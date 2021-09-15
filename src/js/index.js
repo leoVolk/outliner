@@ -7,20 +7,15 @@ $(document).ready(function () {
     let strokeColour = '#525252';
 
 
-    const fillInput = $('#fill');
-    const strokeInput = $('#stroke');
-    const input = $('#file')
-
-
-    input.change(function () {
-        const currentFile = input.prop('files')[0];
-
+    $('#file').change(function () {
+        const currentFile = $('#file').prop('files')[0];
         const reader = new FileReader();
+
 
         reader.onloadend = function () {
             $('.preview_old').empty();
+            $('.preview_new').empty();
             currentImage = reader.result;
-
 
             const svgImage = document.createElement("img");
 
@@ -40,14 +35,30 @@ $(document).ready(function () {
         reader.readAsDataURL(currentFile);
     })
 
-    fillInput.change(function () {
-        fillColour = fillInput.val();
+    $('#fill').change(function () {
+        fillColour = $('#fill').val();
     })
 
-    strokeInput.change(function () {
-        strokeColour = strokeInput.val();
+    $('#stroke').change(function () {
+        strokeColour = $('#stroke').val();
     })
 
+    $('.clear').click(function () {
+        $('.preview_old').empty();
+        $('.preview_new').empty();
+    })
+
+    $('.download').click(function () {
+        if (!currentImage) return;
+        var svgData = document.querySelector('.preview_new').firstElementChild.outerHTML;
+        var svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+        var svgUrl = URL.createObjectURL(svgBlob);
+        var downloadLink = document.createElement("a");
+
+        downloadLink.href = svgUrl;
+        downloadLink.download = $('#file').prop('files')[0].name.replace('.svg', '_outlined.svg');
+        downloadLink.click();
+    })
 
     $('.convert').click(function () {
         if (!currentImage) return;
@@ -67,6 +78,8 @@ $(document).ready(function () {
 
         newSVG.setAttribute('height', '512');
         newSVG.insertBefore(element, newSVG.firstChild);
+
+
 
         $('.preview_new').append(newSVG);
 
