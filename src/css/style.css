@@ -11,7 +11,8 @@
   object-fit: contain;
 }
 
-main {
+body {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   min-height: 100vh;
 }
 
@@ -22,11 +23,7 @@ footer {
 }
 
 nav {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(230, 230, 230, 1) 100%
-  ) !important;
+  background: #fff !important;
 }
 
 .btn {

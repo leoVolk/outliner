@@ -39,7 +39,7 @@
 
     <main class="">
       <div class="container d-none d-lg-block my-4">
-        <div class="shadow border" style="border-radius: 30px">
+        <div class="shadow bg-white border" style="border-radius: 30px">
           <div class="row">
             <div class="col-12 col-lg-6 border-end" style="min-height: 512px">
               <div
@@ -63,24 +63,22 @@
               <div class="col-lg-auto col-12">
                 <input
                   accept="image/svg+xml"
-                  class="input btn shadow-sm btn-secondary h-100"
+                  class="input btn shadow btn-secondary h-100 px-4"
                   type="file"
                   id="file"
                   name="file"
                 />
               </div>
               <div class="col-lg-auto col-12">
-                <button class="btn shadow-sm btn-success h-100 convert">
+                <button class="btn shadow btn-success h-100 convert">
                   Convert
                 </button>
               </div>
               <div class="col-lg-auto col-12">
-                <button class="btn shadow-sm btn-danger h-100 clear">
-                  Clear
-                </button>
+                <button class="btn shadow btn-danger h-100 clear">Clear</button>
               </div>
               <div class="col-lg-auto col-12">
-                <button class="btn shadow-sm btn-primary h-100 download">
+                <button class="btn shadow btn-primary h-100 download">
                   Download Result
                 </button>
               </div>
@@ -144,9 +142,9 @@
     </main>
 
     <footer style="margin-top: 96px">
-      <div class="navbar w-100 border-top navbar-light bg-light">
+      <div class="w-100">
         <div class="container">
-          <div class="row my-2">
+          <div class="row my-2 justify-content-between align-content-center">
             <div class="col-auto">
               © Copyright <span class="currentyear"></span>
               <a
@@ -155,6 +153,15 @@
                 href="https://www.leovolkmann.de"
                 >Leonhard Volkmann</a
               >
+            </div>
+            <div class="col-auto">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://github.com/leoVolk/outliner"
+              >
+                <img width="24" src="./public/img/github.png" />
+              </a>
             </div>
           </div>
         </div>
