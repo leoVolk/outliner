@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+* {
+  font-family: "DM Sans", sans-serif !important;
+  color: #4a4a4a;
+}
+
 .contain-image {
   width: 100%;
   height: 100%;
@@ -20,4 +27,63 @@ nav {
     rgba(255, 255, 255, 1) 0%,
     rgba(230, 230, 230, 1) 100%
   ) !important;
+}
+
+.btn {
+  border-radius: 20px;
+  border: none;
+}
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #e9e7fd;
+  color: #5141ff;
+}
+
+.btn-primary:hover {
+  background-color: #5141ff;
+  color: #fff;
+}
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active {
+  background-color: #fee4cb;
+  color: #ff7b00;
+}
+
+.btn-secondary:hover {
+  background-color: #ff7b00;
+  color: #fff;
+}
+
+.btn-success,
+.btn-success:focus,
+.btn-success:active {
+  background-color: #c8f7dc;
+  color: #00a347;
+}
+
+.btn-success:hover {
+  background-color: #00a347;
+  color: #fff;
+}
+
+.btn-danger,
+.btn-danger:focus,
+.btn-danger:active {
+  background-color: #ffd3e2;
+  color: rgb(192, 1, 65);
+}
+
+.btn-danger:hover {
+  background-color: rgb(192, 1, 65);
+  color: #fff;
+}
+
+.accordion-item:last-of-type,
+.accordion-item:first-of-type {
+  border-radius: 20px;
+  overflow: hidden;
 }

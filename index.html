@@ -4,7 +4,7 @@
     <title>Outliner | Outline Your SVGs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="./src/css/style.css" />
+
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -16,6 +16,7 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./src/css/style.css" />
   </head>
 
   <body>
@@ -38,7 +39,7 @@
 
     <main class="">
       <div class="container d-none d-lg-block my-4">
-        <div class="rounded shadow border">
+        <div class="shadow border" style="border-radius: 30px">
           <div class="row">
             <div class="col-12 col-lg-6 border-end" style="min-height: 512px">
               <div
@@ -62,24 +63,24 @@
               <div class="col-lg-auto col-12">
                 <input
                   accept="image/svg+xml"
-                  class="input btn btn-outline-secondary h-100"
+                  class="input btn shadow-sm btn-secondary h-100"
                   type="file"
                   id="file"
                   name="file"
                 />
               </div>
               <div class="col-lg-auto col-12">
-                <button class="btn btn-outline-secondary h-100 convert">
+                <button class="btn shadow-sm btn-success h-100 convert">
                   Convert
                 </button>
               </div>
               <div class="col-lg-auto col-12">
-                <button class="btn btn-outline-danger h-100 clear">
+                <button class="btn shadow-sm btn-danger h-100 clear">
                   Clear
                 </button>
               </div>
               <div class="col-lg-auto col-12">
-                <button class="btn btn-outline-primary h-100 download">
+                <button class="btn shadow-sm btn-primary h-100 download">
                   Download Result
                 </button>
               </div>
@@ -88,24 +89,24 @@
         </div>
         <div class="row mt-4">
           <div class="col">
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
+            <div class="accordion">
+              <div class="accordion-item shadow-sm">
+                <h2 class="accordion-header" id="headingTwo">
                   <button
-                    class="accordion-button"
+                    class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
                   >
                     Options
                   </button>
                 </h2>
                 <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
