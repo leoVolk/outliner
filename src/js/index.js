@@ -66,6 +66,14 @@ $(document).ready(function () {
     })
 
     $('.convert').click(() => {
+        convertImage();
+    });
+
+    $('.arrow-box').click(() => {
+        convertImage();
+    });
+
+    const convertImage = () => {
         if (!currentImage) return;
 
         $('.preview_new').empty();
@@ -76,17 +84,16 @@ $(document).ready(function () {
         wrapper.innerHTML = decoded;
         const newSVG = wrapper.querySelector('svg');
 
-        const svgStyle = `rect, path, polygon, circle, ellipse, polyline, line {fill: ${fillColour} !important; stroke: ${strokeColour} !important; stroke-width: 1px!important; }`;
+        const svgStyle = `.outlined rect,.outlined path,.outlined polygon,.outlined circle, .outlined ellipse, .outlined polyline, line {fill: ${fillColour} !important; stroke: ${strokeColour} !important; stroke-width: 1px!important; }`;
         const element = document.createElement('style');
 
         element.innerHTML = svgStyle;
 
-        newSVG.classList.add('contain-image')
+        newSVG.classList.add('contain-image', 'outlined')
         newSVG.insertBefore(element, newSVG.firstChild);
 
         $('.preview_new').append(newSVG);
-
-    });
+    };
 
 
     const clearImages = () => {

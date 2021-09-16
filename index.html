@@ -16,18 +16,24 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <!--     <link
+      href="./src/vendors/vivify.min.css"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
 
   <body>
     <header>
-      <nav class="navbar shadow navbar-light bg-light">
+      <nav class="navbar shadow navbar-light">
         <div class="container">
           <a class="navbar-brand" href="#">
             <img
               src="./public/img/logo.png"
               alt=""
-              width="30"
+              width="24"
               height="24"
               class="d-inline-block align-text-top"
             />
@@ -39,9 +45,15 @@
 
     <main class="">
       <div class="container d-none d-lg-block my-4">
-        <div class="shadow bg-white border" style="border-radius: 30px">
+        <div
+          class="shadow bg-white position-relative compare-image"
+          style="border-radius: 30px"
+        >
           <div class="row">
-            <div class="col-12 col-lg-6 border-end" style="min-height: 512px">
+            <div
+              class="col-12 col-lg-6 border-seperator position-relative"
+              style="min-height: 512px"
+            >
               <div
                 class="preview_old contain-image"
                 style="max-height: 512px"
@@ -53,8 +65,31 @@
                 style="max-height: 512px"
               ></div>
             </div>
-            <h4 class="col-6 mb-0 py-2 text-center border-end">Preview</h4>
+            <h4 class="col-6 mb-0 py-2 text-center border-seperator">
+              Preview
+            </h4>
             <h4 class="col-6 mb-0 py-2 text-center">Result</h4>
+          </div>
+          <div class="arrow-box-container">
+            <div class="arrow-box shadow">
+              <div
+                class="d-flex justify-content-center align-items-center h-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  fill="currentColor"
+                  class="bi bi-arrow-right vivify duration-2000"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row mt-4">

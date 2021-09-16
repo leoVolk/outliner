@@ -1,0 +1,68 @@
+.btn {
+  border-radius: 20px;
+  border: 2px solid #636363;
+}
+
+.btn:hover {
+  color: #4a4a4a;
+}
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #e9e7fd;
+  color: #5141ff;
+}
+
+.btn-primary:hover {
+  background-color: #5141ff25;
+}
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active {
+  background-color: #fee4cb;
+  color: #ff7b00;
+}
+
+.btn-secondary:hover {
+  background-color: #ff7b0025;
+}
+
+.btn-success,
+.btn-success:focus,
+.btn-success:active {
+  background-color: #c8f7dc;
+  color: #00a347;
+}
+
+.btn-success:hover {
+  background-color: #00a34725;
+}
+
+.btn-danger,
+.btn-danger:focus,
+.btn-danger:active {
+  background-color: #ffd3e2;
+  color: rgb(192, 1, 65);
+}
+
+.btn-danger:hover {
+  background-color: rgba(192, 1, 65, 0.25);
+}
+
+.accordion-item:last-of-type,
+.accordion-item:first-of-type {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #636363;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #4a4a4a !important;
+  background-color: #87adfd25 !important;
+  border-bottom: 2px solid #636363;
+}
