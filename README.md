@@ -1,8 +1,6 @@
 # outliner
 
-## Description
-
-You can find a working version [here](https://github.com/leoVolk/outliner)
+You can find a working version [here](https://leovolk.github.io/outliner/)
 
 A usefull & simple tool to change (all) fill and stroke colours of an svg image.
 
