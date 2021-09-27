@@ -147,7 +147,10 @@
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
-                    <div class="mt-4 d-flex align-center">
+                    <div class="d-flex mt-4 align-items-center">
+                      <span class="h4 mb-0" style=" margin-right: 12px"->General</span> <span class="w-100 line"></span>
+                    </div>
+                    <div class="mt-4 d-flex align-items-center">
                       <input
                         type="color"
                         id="fill"
@@ -155,10 +158,10 @@
                         style="margin-right: 12px"
                         value="#ffffff"
                       />
-                      <label for="fill">Fill Colour</label>
+                      <label for="fill">fill colour</label>
                     </div>
 
-                    <div class="mt-4 d-flex align-center">
+                    <div class="mt-4 d-flex align-items-center">
                       <input
                         type="color"
                         id="stroke"
@@ -166,7 +169,38 @@
                         style="margin-right: 12px"
                         value="#525252"
                       />
-                      <label for="stroke">Stroke Colour</label>
+                      <label for="stroke">stroke colour</label>
+                    </div>
+
+
+                    <div class="mt-4 d-flex align-items-center">
+                      <input min="1" style="margin-right: 12px" id="strokeWidth" value="1" type="number" />
+                      <label  class="ml-4" for="strokeWidth"> stroke width (in pixel)</label>
+                    </div>
+
+                    <div class="d-flex mt-4 align-items-center">
+                      <span class="h4 mb-0" style=" margin-right: 12px">Animation</span> <span class="w-100 line"></span>
+                    </div>
+
+                    <div class="mt-4 d-flex align-items-center">
+                      <input id="shouldAnimate" type="checkbox"  style="margin-right: 12px; height: 24px; width: 24px;"/>
+                      <label class="ml-4" for="shouldAnimate"> animate SVG? </label>
+                    </div>
+
+                    <div class="mt-4 d-flex align-items-center">
+                      <input id="animLength" type="number" value="2" min="0"  style="margin-right: 12px;"/>
+                      <label class="ml-4" for="animLength"> animation length (in seconds) </label>
+                    </div>
+
+                    <div class="mt-4 d-flex align-items-center">
+                      <select style="margin-right: 12px;" id="easing-select">
+                        <option selected>linear</option>
+                        <option>ease</option>
+                        <option>ease-in</option>
+                        <option>ease-in-out</option>
+                        <option>ease-out</option>
+                      </select>
+                      <label for="easing-select"> animation easing</label>
                     </div>
                   </div>
                 </div>

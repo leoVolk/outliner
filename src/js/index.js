@@ -1,12 +1,14 @@
-
-
 $(document).ready(function () {
 
     let currentImage;
     let fillColour = '#fff';
     let strokeColour = '#525252';
+    let strokeWidth = 1;
+    let hasAnimation = false;
+    let animationLength = 2;
+    let animationEasing = 'linear';
 
-    $('.currentyear').html(new Date().getFullYear())
+    $('.currentyear').html(new Date().getFullYear());
 
 
     $('#file').change(() => {
@@ -35,19 +37,36 @@ $(document).ready(function () {
         //reader.readAsText(file);
         //reader.readAsBinaryString(file); //as bit work with base64 for example upload to server
         reader.readAsDataURL(currentFile);
-    })
+    });
 
     $('#fill').change(() => {
         fillColour = $('#fill').val();
-    })
+    });
 
     $('#stroke').change(() => {
         strokeColour = $('#stroke').val();
+    });
+
+    $('#strokeWidth').change(() => {
+        strokeWidth = $('#strokeWidth').val();
+        console.log(strokeWidth)
+    });
+
+    $('#shouldAnimate').change(() => {
+        hasAnimation = $('#shouldAnimate').prop("checked");
+    });
+
+    $('#animLength').change(() => {
+        animationLength = $('#animLength').val();
     })
+
+    $('#easing-select').change(() => {
+        animationEasing = $('#easing-select').val();
+    });
 
     $('.clear').click(() => {
         clearImages();
-    })
+    });
 
     $('.download').click(() => {
         if (!currentImage) return;
@@ -63,7 +82,7 @@ $(document).ready(function () {
         downloadLink.download = $('#file').prop('files')[0].name.replace('.svg', '_outlined.svg');
         downloadLink.click();
         clearImages();
-    })
+    });
 
     $('.convert').click(() => {
         convertImage();
@@ -84,10 +103,27 @@ $(document).ready(function () {
         wrapper.innerHTML = decoded;
         const newSVG = wrapper.querySelector('svg');
 
-        const svgStyle = `.outlined rect,.outlined path,.outlined polygon,.outlined circle, .outlined ellipse, .outlined polyline, line {fill: ${fillColour} !important; stroke: ${strokeColour} !important; stroke-width: 1px!important; }`;
+        const outlineStyle = `.outlined rect,.outlined path,.outlined polygon,.outlined circle, .outlined ellipse, .outlined polyline, line {fill: ${fillColour} !important; stroke: ${strokeColour} !important; stroke-width: ${strokeWidth}px !important; }`;
+
+        const animationStyle = `svg {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            pointer-events: none;
+            animation: motion ${animationLength}s ${animationEasing} forwards;
+        }
+
+        @keyframes motion {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }; `
         const element = document.createElement('style');
 
-        element.innerHTML = svgStyle;
+        addInnerHTML(element, outlineStyle);
+
+        if (hasAnimation) {
+            addInnerHTML(element, animationStyle);
+        }
 
         newSVG.classList.add('contain-image', 'outlined')
         newSVG.insertBefore(element, newSVG.firstChild);
@@ -99,6 +135,10 @@ $(document).ready(function () {
     const clearImages = () => {
         $('.preview_old').empty();
         $('.preview_new').empty();
+    }
+
+    const addInnerHTML = (element, html) => {
+        element.innerHTML += html;
     }
 
 });

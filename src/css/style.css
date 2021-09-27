@@ -67,3 +67,7 @@ main {
   background-color: #fff;
   cursor: pointer;
 }
+
+.line {
+  border: 1px solid #636363;
+}
